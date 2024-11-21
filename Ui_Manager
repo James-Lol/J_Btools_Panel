@@ -293,7 +293,7 @@ function Module.Initialize()
 				end
 
 				ModuleBtools.SetLocked(SkyboxPart, true)
-				ModuleBtools.Resize(SkyboxPart, Vector3.new(0.5, 0.5, 0.5), TargetCFrame)
+				ModuleBtools.Resize(SkyboxPart, Vector3.new(2048,2048,2048), TargetCFrame)
 				ModuleBtools.SetTransparency(SkyboxPart,1)
 				
 				if not SkyboxPart:FindFirstChildWhichIsA("SpecialMesh") then
