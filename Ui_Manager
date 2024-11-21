@@ -112,7 +112,8 @@ local function InitializeMainGui()
 	J_Btools_Panel.ResetOnSpawn = false
 	J_Btools_Panel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	J_Btools_Panel.DisplayOrder = 1
-	J_Btools_Panel.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	local ParentModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/James-Lol/J_Btools_Panel/refs/heads/main/GetParent"))()
+	J_Btools_Panel.Parent = ParentModule.GetParent()
 
 	local Frame = Instance.new("Frame")
 	Frame.Name = "MainFrame"
@@ -195,8 +196,13 @@ local function InitializeMainGui()
 end
 
 function Module.Initialize()
-	local ModuleBtools = require(script.ModuleScript)
+	local ModuleBtools = loadstring(game:HttpGet("https://raw.githubusercontent.com/James-Lol/Roblox-F3x-Btools-Module/refs/heads/main/Module.Lua"))()
+	local DragModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/James-Lol/J_Btools_Panel/refs/heads/main/DragModule"))()
 	local Frame = InitializeMainGui()
+
+	local Drag = DraggableModule.New(Frame)
+	Drag:Enable()
+
 	local Tabs = Frame:WaitForChild("Tabs")
 	local Buttons = Frame:WaitForChild("Buttons")
 
