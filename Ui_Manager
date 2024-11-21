@@ -200,7 +200,7 @@ function Module.Initialize()
 	local DragModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/James-Lol/J_Btools_Panel/refs/heads/main/DragModule"))()
 	local Frame = InitializeMainGui()
 
-	local Drag = DraggableModule.New(Frame)
+	local Drag = DragModule.New(Frame)
 	Drag:Enable()
 
 	local Tabs = Frame:WaitForChild("Tabs")
