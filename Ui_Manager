@@ -1,0 +1,321 @@
+local Module = {}
+
+function Module.CreateButtonType(Type,TextButton,ButtonParent,Placeholder_Text)
+	local Button = nil
+
+	if Type == 0 then
+		Button = Instance.new("TextButton")
+		Button.Name = "Type0"
+		Button.Size = UDim2.new(1, 0, 1, 0)
+		Button.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
+		Button.BorderSizePixel = 0
+		Button.BorderColor3 = Color3.new(0, 0, 0)
+		Button.AnchorPoint = Vector2.new(0.5, 0.5)
+		Button.Selectable = false
+		Button.Text = TextButton
+		Button.TextColor3 = Color3.new(1, 1, 1)
+		Button.TextSize = 20
+		Button.FontFace = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
+		Button.TextScaled = true
+		Button.TextWrapped = true
+		Button.TextXAlignment = Enum.TextXAlignment.Left
+		Button.AutoButtonColor = false
+	elseif Type == 1 then
+		Button = Instance.new("TextLabel")
+		Button.Name = "Type1"
+		Button.Size = UDim2.new(1, 0, 1, 0)
+		Button.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
+		Button.BorderSizePixel = 0
+		Button.BorderColor3 = Color3.new(0, 0, 0)
+		Button.AnchorPoint = Vector2.new(0.5, 0.5)
+		Button.Active = true
+		Button.Text = TextButton
+		Button.TextColor3 = Color3.new(1, 1, 1)
+		Button.TextSize = 20
+		Button.FontFace = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
+		Button.TextScaled = true
+		Button.TextWrapped = true
+		Button.TextXAlignment = Enum.TextXAlignment.Left
+	elseif Type == 2 then
+		Button = Instance.new("TextButton")
+		Button.Name = "Type2"
+		Button.Size = UDim2.new(1, 0, 1, 0)
+		Button.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
+		Button.BorderSizePixel = 0
+		Button.BorderColor3 = Color3.new(0, 0, 0)
+		Button.AnchorPoint = Vector2.new(0.5, 0.5)
+		Button.Selectable = false
+		Button.Text = TextButton
+		Button.TextColor3 = Color3.new(1, 1, 1)
+		Button.TextSize = 20
+		Button.FontFace = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
+		Button.TextScaled = true
+		Button.TextWrapped = true
+		Button.TextXAlignment = Enum.TextXAlignment.Left
+		Button.AutoButtonColor = false
+	else
+		Button = Instance.new("TextButton")
+		Button.Name = "Type3"
+		Button.Size = UDim2.new(1, 0, 1, 0)
+		Button.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
+		Button.BorderSizePixel = 0
+		Button.BorderColor3 = Color3.new(0, 0, 0)
+		Button.AnchorPoint = Vector2.new(0.5, 0.5)
+		Button.Selectable = false
+		Button.Text = TextButton
+		Button.TextColor3 = Color3.new(1, 1, 1)
+		Button.TextSize = 20
+		Button.FontFace = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
+		Button.TextScaled = true
+		Button.TextWrapped = true
+		Button.TextXAlignment = Enum.TextXAlignment.Left
+		Button.AutoButtonColor = false
+
+		local TextBox = Instance.new("TextBox")
+		TextBox.Name = "TextBox"
+		TextBox.Position = UDim2.new(0.75, 0, 0.5, 0)
+		TextBox.Size = UDim2.new(0.47, 0, 0.7, 0)
+		TextBox.BackgroundColor3 = Color3.new(0.176471, 0.176471, 0.176471)
+		TextBox.BorderSizePixel = 0
+		TextBox.BorderColor3 = Color3.new(0, 0, 0)
+		TextBox.AnchorPoint = Vector2.new(0.5, 0.5)
+		TextBox.Text = ""
+		TextBox.TextColor3 = Color3.new(1, 1, 1)
+		TextBox.TextSize = 20
+		TextBox.FontFace = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
+		TextBox.TextScaled = true
+		TextBox.TextWrapped = true
+		TextBox.PlaceholderText = Placeholder_Text
+		TextBox.Parent = Button
+
+		local UICorner2 = Instance.new("UICorner")
+		UICorner2.Name = "UICorner"
+		UICorner2.CornerRadius = UDim.new(0.4, 0)
+		UICorner2.Parent = TextBox
+
+	end
+
+	Button.Parent = ButtonParent
+
+	local UICorner = Instance.new("UICorner")
+	UICorner.Name = "UICorner"
+	UICorner.CornerRadius = UDim.new(0.4, 0)
+	UICorner.Parent = Button
+
+	return Button
+end
+
+local function InitializeMainGui()
+	local J_Btools_Panel = Instance.new("ScreenGui")
+	J_Btools_Panel.Name = "J-Btools-Panel"
+	J_Btools_Panel.IgnoreGuiInset = true
+	J_Btools_Panel.ResetOnSpawn = false
+	J_Btools_Panel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	J_Btools_Panel.DisplayOrder = 1
+	J_Btools_Panel.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	local Frame = Instance.new("Frame")
+	Frame.Name = "MainFrame"
+	Frame.Position = UDim2.new(0.269111, 0, 0.486842, 0)
+	Frame.Size = UDim2.new(0.287051, 0, 0.361403, 0)
+	Frame.BackgroundColor3 = Color3.new(0.152941, 0.152941, 0.152941)
+	Frame.BorderSizePixel = 0
+	Frame.BorderColor3 = Color3.new(0, 0, 0)
+	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+	Frame.Active = true
+	Frame.Parent = J_Btools_Panel
+
+	local UICorner = Instance.new("UICorner")
+	UICorner.Name = "UICorner"
+	UICorner.CornerRadius = UDim.new(0.1, 0)
+	UICorner.Parent = Frame
+
+	local DraggableObject = Instance.new("ModuleScript")
+	DraggableObject.Name = "DraggableObject"
+
+	DraggableObject.Parent = Frame
+
+	local Buttons = Instance.new("Frame")
+	Buttons.Name = "Buttons"
+	Buttons.Position = UDim2.new(0.296196, 0, 0.0436893, 0)
+	Buttons.Size = UDim2.new(0.659783, 0, 0.114563, 0)
+	Buttons.BackgroundColor3 = Color3.new(1, 1, 1)
+	Buttons.BackgroundTransparency = 1
+	Buttons.BorderSizePixel = 0
+	Buttons.BorderColor3 = Color3.new(0, 0, 0)
+	Buttons.Transparency = 1
+	Buttons.Active = true
+	Buttons.Parent = Frame
+
+	local UIListLayout = Instance.new("UIListLayout")
+	UIListLayout.Name = "UIListLayout"
+	UIListLayout.Padding = UDim.new(0.2, 0)
+	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.Parent = Buttons
+
+	local Tabs = Instance.new("Frame")
+	Tabs.Name = "Tabs"
+	Tabs.Position = UDim2.new(0.0353261, 0, 0.0436893, 0)
+	Tabs.Size = UDim2.new(0.241304, 0, 0.114563, 0)
+	Tabs.BackgroundColor3 = Color3.new(1, 1, 1)
+	Tabs.BackgroundTransparency = 1
+	Tabs.BorderSizePixel = 0
+	Tabs.BorderColor3 = Color3.new(0, 0, 0)
+	Tabs.Transparency = 1
+	Tabs.Active = true
+	Tabs.Parent = Frame
+
+	local UIListLayout2 = Instance.new("UIListLayout")
+	UIListLayout2.Name = "UIListLayout"
+	UIListLayout2.Padding = UDim.new(0.2, 0)
+	UIListLayout2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout2.Parent = Tabs
+	
+	local Icon = Instance.new("TextLabel")
+	Icon.Name = "Icon"
+	Icon.Position = UDim2.new(0.0298913, 0, -0.325243, 0)
+	Icon.Size = UDim2.new(0.9375, 0, 0.485437, 0)
+	Icon.BackgroundColor3 = Color3.new(1, 1, 1)
+	Icon.BackgroundTransparency = 1
+	Icon.BorderSizePixel = 0
+	Icon.BorderColor3 = Color3.new(0, 0, 0)
+	Icon.Transparency = 1
+	Icon.Active = true
+	Icon.Text = "J_Btools_Panel"
+	Icon.TextTransparency = 0
+	Icon.TextColor3 = Color3.new(1, 1, 1)
+	Icon.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+	Icon.TextScaled = true
+	Icon.TextWrapped = true
+	Icon.Parent = Frame
+
+	return Frame
+end
+
+function Module.Initialize()
+	local ModuleBtools = require(script.ModuleScript)
+	local Frame = InitializeMainGui()
+	local Tabs = Frame:WaitForChild("Tabs")
+	local Buttons = Frame:WaitForChild("Buttons")
+
+	local function RemoveButtons()
+		for _,Button in ipairs(Buttons:GetChildren()) do
+			if Button:IsA("TextLabel") or Button:IsA("TextButton") then
+				Button:Destroy()
+			end
+		end
+	end
+	
+	local Tab1 = Module.CreateButtonType(0,"Teleport",Tabs)
+	Tab1.LayoutOrder = 1
+
+	Tab1.MouseButton1Click:Connect(function()
+		RemoveButtons()
+		
+		local GiverF3xBtoolsTeleport = Module.CreateButtonType(2,"Teleport To Giver",Buttons)
+		
+		GiverF3xBtoolsTeleport.MouseButton1Click:Connect(function()
+			local OriginalPlayerCframe = nil
+			
+			if game.Players.LocalPlayer.Character then
+				OriginalPlayerCframe = game.Players.LocalPlayer.Character:GetPivot()
+			end
+			
+			for i, Object in pairs(game.Workspace:GetDescendants()) do
+				if i % 150 == 0 then
+					task.wait()
+				end
+
+				if string.lower(Object.Name) ~= "giver part" and string.lower(Object.Name) ~= "giver" and string.lower(Object.Name) ~= "button" then
+					continue
+				end
+
+				if not Object:FindFirstChildWhichIsA("TouchTransmitter") then
+					continue
+				end
+
+				if game.Players.LocalPlayer.Character then
+					game.Players.LocalPlayer.Character:PivotTo(Object.CFrame)
+				end
+				task.wait(0.1)
+			end
+			
+			if OriginalPlayerCframe then
+				if game.Players.LocalPlayer.Character then
+					game.Players.LocalPlayer.Character:PivotTo(OriginalPlayerCframe)
+				end
+			end
+		end)
+	end)
+	
+	local Tab2 = Module.CreateButtonType(0,"Skybox",Tabs)
+	Tab2.LayoutOrder = 2
+
+	Tab2.MouseButton1Click:Connect(function()
+		RemoveButtons()
+
+		local SkyboxTextbox = Module.CreateButtonType(3, "Skybox Image : ", Buttons, "Image Id")
+		local Textbox = SkyboxTextbox:WaitForChild("TextBox")
+
+		Textbox:GetPropertyChangedSignal("Text"):Connect(function()
+			Textbox.Text = Textbox.Text:gsub("[^%d]", "")
+		end)
+
+		local SkyboxChange = Module.CreateButtonType(2,"Set Skybox",Buttons)
+		SkyboxChange.MouseButton1Click:Connect(function()
+			local ImageId = tonumber(Textbox.Text)
+			if ImageId then
+				print("Changing Sky to Image: " .. Textbox.Text)
+
+				local TargetCFrame = CFrame.new(0, 0.1213, 0)
+
+				local function FindPartByCFrame(CFrameToFind)
+					for _, WorkspacePart in ipairs(game.Workspace:GetChildren()) do
+						if WorkspacePart:IsA("BasePart") and WorkspacePart.CFrame == CFrameToFind then
+							return WorkspacePart
+						end
+					end
+					return nil
+				end
+
+				local SkyboxPart = FindPartByCFrame(TargetCFrame)
+				if not SkyboxPart then
+					ModuleBtools.CreatePart(TargetCFrame, game.Workspace)
+					SkyboxPart = FindPartByCFrame(TargetCFrame)
+				end
+
+				ModuleBtools.SetLocked(SkyboxPart, true)
+				ModuleBtools.Resize(SkyboxPart, Vector3.new(0.5, 0.5, 0.5), TargetCFrame)
+				ModuleBtools.SetTransparency(SkyboxPart,1)
+				
+				if not SkyboxPart:FindFirstChildWhichIsA("SpecialMesh") then
+					ModuleBtools.AddMesh(SkyboxPart)
+				end
+
+				ModuleBtools.SetMesh(SkyboxPart, 82857257511301, 0, Vector3.new(100, 100, 100))
+
+				local function HasDecalForFace(Part, Face)
+					for _, Child in ipairs(Part:GetChildren()) do
+						if Child:IsA("Decal") and Child.Face == Face then
+							return true
+						end
+					end
+					return false
+				end
+
+				for _, Face in ipairs(Enum.NormalId:GetEnumItems()) do
+					if not HasDecalForFace(SkyboxPart, Face) then
+						ModuleBtools.CreateTexture(SkyboxPart, "Decal", Face)
+					end
+					ModuleBtools.SetTexture(SkyboxPart, ImageId, "Decal", Face)
+				end
+			else
+				warn("Invalid Image ID. Please provide a valid numeric ID.")
+			end
+		end)
+	end)
+end
+
+return Module
